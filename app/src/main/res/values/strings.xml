@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">CatBooks</string>
+    <string name="explorar">Explorar</string>
+    <string name="radio_button1">Misterio</string>
+    <string name="radio_button2">Historia</string>
+    <string name="radio_button3">Poesía</string>
+    <string name="radio_button4">Terror</string>
+    <string name="text_genero"> Seleccione el género que le interese</string>
+    <string name="user">Usuario</string>
+    <string name="pass">Contraseña</string>
+    <string name="access">Acceder</string>
+    <string name="register">¿No tienes cuenta? Regístrate aquí</string>
+    <string name="action_search">Buscar</string>
+    <string name="action_favs">Mis libros favoritos</string>
+    <string name="action_notifs">Notificaciones</string>
+    <string name="action_cart">Ver carrito</string>
+
+    <string name="profile">Mi perfil</string>
+    <string name="genre">Géneros</string>
+    <string name="config">Configuración</string>
+    <string name="logout">Cerrar sesión</string>
+
+    <string name="navigation_drawer_open">Abrir menú</string>
+    <string name="navigation_drawer_close">Cerrar menú</string>
+</resources>

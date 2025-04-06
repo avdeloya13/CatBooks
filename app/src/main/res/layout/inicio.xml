@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_theme_onPrimary"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:id="@+id/main">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/md_theme_primary"
+            app:title="">
+
+            <TextView
+                android:id="@+id/app_name_toolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="40sp"
+                android:textColor="@android:color/white"
+                android:fontFamily="@font/yellowtail_regular"
+                android:layout_gravity="start" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <!-- En esta vista de la aplicacion va a ir una lista con titulos de libros del
+        genero que ha seleccionado el usuario, como no nos han pedido utilizar listas
+        para esta tarea le voy a dejar una imagen del logo por el momento.
+
+        Quiero utilizar la misma estructura que en las vistas de la tarea 2:
+        constraint -> scroll ->layout
+        Le he quitado el scroll por el momento porque solo tengo la imagen del logo.-->
+        <ImageView
+            android:id="@+id/imageViewlogo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/cat_img_logo_" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
