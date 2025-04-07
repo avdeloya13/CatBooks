@@ -9,18 +9,18 @@
         android:title="@string/action_search" />
 
     <item
-        android:id="@+id/action_favs"
-        app:showAsAction="never"
-        android:title="@string/action_favs" />
-
-    <item
         android:id="@+id/action_notifs"
         app:showAsAction="never"
         android:title="@string/action_notifs" />
 
     <item
-        android:id="@+id/action_cart"
+        android:id="@+id/action_config"
         app:showAsAction="never"
-        android:title="@string/action_cart" />
+        android:title="@string/action_config" />
+
+    <item
+        android:id="@+id/action_logout"
+        app:showAsAction="never"
+        android:title="@string/action_logout" />
 
 </menu>

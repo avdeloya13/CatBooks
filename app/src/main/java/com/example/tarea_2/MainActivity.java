@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -21,54 +22,66 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private DrawerLayout drawerLayout;
-    private NavigationView navigationView;
-    private ActionBarDrawerToggle toggle;
+    private DrawerLayout mDrawerLayout;
+    private NavigationView mNavigationView;
+    private ActionBarDrawerToggle mDrawerToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
 
-        //Tarea_2
         //setContentView(R.layout.login); //Pantalla 1
+
+        //setContentView(R.layout.registro); //Pantalla 2 (si nunca se ha registrado)
 
         //setContentView(R.layout.genero_libro);
 
-        //Tarea_3
-        setContentView(R.layout.inicio_navigation_drawer); //Pantalla 2
+        //TAREA 3
+        setContentView(R.layout.inicio_navigation_drawer); //Pantalla 2 (si se ha registrado)
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayShowTitleEnabled(false);
-        }
+        if (getSupportActionBar() != null) getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        drawerLayout = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.left_drawer);
+        mDrawerLayout = findViewById(R.id.drawer_layout);
+        mNavigationView = findViewById(R.id.left_drawer);
 
-        toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
-                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.DrawerOpen, R.string.DrawerClosed) {
+            public void onDrawerClosed(View view){ Log.d("MainActivity", "onDrawerClosed"); }
+            public void onDrawerOpened(View drawerView) { Log.d("MainActivity", "onDrawerOpened"); }
+        };
 
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+        mDrawerLayout.addDrawerListener(mDrawerToggle);
+        mDrawerToggle.syncState();
+
+        mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
                 int id = item.getItemId();
 
                 if (id == R.id.profile) {
-                    Toast.makeText(MainActivity.this, "Perfil", Toast.LENGTH_SHORT).show();
-                } else if (id == R.id.genre) {
-                    Toast.makeText(MainActivity.this, "Categorías", Toast.LENGTH_SHORT).show();
-                } else if (id == R.id.config) {
-                    Toast.makeText(MainActivity.this, "Configuración", Toast.LENGTH_SHORT).show();
-                } else if (id == R.id.logout) {
-                    Toast.makeText(MainActivity.this, "Cerrar sesión", Toast.LENGTH_SHORT).show();
+                    Log.d("MainActivity", "ver perfil");
+                    Toast.makeText(MainActivity.this, "ver perfil", Toast.LENGTH_SHORT).show();
+                } else if (id == R.id.action_favs) {
+                    Log.d("MainActivity", "ver libros favoritos");
+                    Toast.makeText(MainActivity.this, "ver libros favoritos", Toast.LENGTH_SHORT).show();
+                } else if (id == R.id.action_cart) {
+                    Log.d("MainActivity", "ver carrito");
+                    Toast.makeText(MainActivity.this, "ver carrito", Toast.LENGTH_SHORT).show();
+                }  else if (id == R.id.gen_misterio) {
+                    Log.d("MainActivity", "libros de misterio");
+                    Toast.makeText(MainActivity.this, "libros de misterio", Toast.LENGTH_SHORT).show();
+                } else if (id == R.id.gen_historia) {
+                    Log.d("MainActivity", "libros de historia");
+                    Toast.makeText(MainActivity.this, "libros de historia", Toast.LENGTH_SHORT).show();
+                } else if (id == R.id.gen_poesia) {
+                    Log.d("MainActivity", "libros de poesía");
+                    Toast.makeText(MainActivity.this, "libros de poesía", Toast.LENGTH_SHORT).show();
+                } else if (id == R.id.gen_terror) {
+                    Log.d("MainActivity", "libros de terror");
+                    Toast.makeText(MainActivity.this, "libros de terror", Toast.LENGTH_SHORT).show();
                 }
-
-                // Cierra el drawer después de seleccionar
-                drawerLayout.closeDrawers();
+                mDrawerLayout.closeDrawers();
                 return true;
             }
         });
@@ -91,24 +104,23 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.action_search) {
-            Log.d("MainActivity", "action_search");
-            Toast.makeText(this, "action_search", Toast.LENGTH_SHORT).show();
-            return true;
-        }  else if (id == R.id.action_favs) {
-            Log.d("MainActivity", "action_favs");
-            Toast.makeText(this, "action_favs", Toast.LENGTH_SHORT).show();
+            Log.d("MainActivity", "buscar libro");
+            Toast.makeText(MainActivity.this, "buscar libro", Toast.LENGTH_SHORT).show();
             return true;
         } else if (id == R.id.action_notifs) {
-            Log.d("MainActivity", "action_notifs");
-            Toast.makeText(this, "action_notifs", Toast.LENGTH_SHORT).show();
+            Log.d("MainActivity", "ver notificaciones");
+            Toast.makeText(MainActivity.this, "ver notificaciones", Toast.LENGTH_SHORT).show();
             return true;
-        } else if (id == R.id.action_cart) {
-            Log.d("MainActivity", "action_cart");
-            Toast.makeText(this, "action_cart", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.action_config) {
+            Log.d("MainActivity", "configuracion");
+            Toast.makeText(MainActivity.this, "configuracion", Toast.LENGTH_SHORT).show();
             return true;
-        } else {
-            return super.onOptionsItemSelected(item);
+        } else if (id == R.id.action_logout) {
+            Log.d("MainActivity", "cerrar sesión");
+            Toast.makeText(MainActivity.this, "cerrar sesión", Toast.LENGTH_SHORT).show();
+            return true;
         }
-    }
 
+        return super.onOptionsItemSelected(item);
+    }
 }

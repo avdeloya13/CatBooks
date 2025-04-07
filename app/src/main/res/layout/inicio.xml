@@ -35,11 +35,10 @@
 
         </androidx.appcompat.widget.Toolbar>
 
-        <!-- En esta vista de la aplicacion va a ir una lista con titulos de libros del
-        genero que ha seleccionado el usuario, como no nos han pedido utilizar listas
-        para esta tarea le voy a dejar una imagen del logo por el momento.
+        <!-- En esta vista de la aplicacion va a ir una lista con titulos de libros,
+        como no nos han pedido utilizar listas para esta tarea le voy a dejar una imagen del logo por el momento :)
 
-        Quiero utilizar la misma estructura que en las vistas de la tarea 2:
+        Pienso utilizar la misma estructura que hice en las vistas de la tarea 2:
         constraint -> scroll ->layout
         Le he quitado el scroll por el momento porque solo tengo la imagen del logo.-->
         <ImageView

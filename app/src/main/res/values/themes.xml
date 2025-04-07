@@ -48,7 +48,4 @@
         <item name="colorSurfaceContainerHighest">@color/md_theme_surfaceContainerHighest</item>
     </style>
     <style name="Theme.Tarea_2" parent="Base.Theme.Tarea_2" />
-    <!--<style name="Theme.App" parent="Theme.Material3.DayNight">
-        <item name="android:windowTranslucentStatus">true</item>
-    </style>-->
 </resources>
