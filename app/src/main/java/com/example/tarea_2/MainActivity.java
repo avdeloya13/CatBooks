@@ -31,9 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         //setContentView(R.layout.login); //Pantalla 1
 
-        //setContentView(R.layout.registro); //Pantalla 2 (si nunca se ha registrado)
-
-        //setContentView(R.layout.genero_libro);
+        //setContentView(R.layout.registro); //Pantalla 2 (si no se ha registrado)
 
         //TAREA 3
         setContentView(R.layout.inicio_navigation_drawer); //Pantalla 2 (si se ha registrado)
@@ -114,8 +112,8 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "ver notificaciones", Toast.LENGTH_SHORT).show();
             return true;
         } else if (id == R.id.action_config) {
-            Log.d("MainActivity", "configuracion");
-            Toast.makeText(MainActivity.this, "configuracion", Toast.LENGTH_SHORT).show();
+            Log.d("MainActivity", "configuración");
+            Toast.makeText(MainActivity.this, "configuración", Toast.LENGTH_SHORT).show();
             return true;
         } else if (id == R.id.action_logout) {
             Log.d("MainActivity", "cerrar sesión");
