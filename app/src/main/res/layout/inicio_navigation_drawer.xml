@@ -20,6 +20,7 @@
         android:layout_height="match_parent"
         android:choiceMode="singleChoice"
         android:background="@color/md_theme_onPrimary"
-        app:menu="@menu/menu_navigation_drawer" />
+        app:menu="@menu/menu_navigation_drawer"
+        app:headerLayout="@layout/inicio_header_navigation_drawer"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>

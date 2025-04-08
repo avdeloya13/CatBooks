@@ -35,12 +35,12 @@
 
         </androidx.appcompat.widget.Toolbar>
 
-        <!-- En esta vista de la aplicacion va a ir una lista con titulos de libros,
+        <!-- En esta vista de la aplicacion van a ir todos los libros de la tienda, creo que utilizando una lista,
         como no nos han pedido utilizar listas para esta tarea le voy a dejar una imagen del logo por el momento :)
 
         Pienso utilizar la misma estructura que hice en las vistas de la tarea 2:
         constraint -> scroll ->layout
-        Le he quitado el scroll por el momento porque solo tengo la imagen del logo.-->
+        Le he quitado el scroll porque por el momento porque solo tengo la imagen del logo.-->
         <ImageView
             android:id="@+id/imageViewlogo"
             android:layout_width="match_parent"

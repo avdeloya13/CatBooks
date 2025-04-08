@@ -23,8 +23,6 @@ import com.google.android.material.navigation.NavigationView;
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
-    private NavigationView mNavigationView;
-    private ActionBarDrawerToggle mDrawerToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +42,15 @@ public class MainActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         mDrawerLayout = findViewById(R.id.drawer_layout);
-        mNavigationView = findViewById(R.id.left_drawer);
+        NavigationView mNavigationView = findViewById(R.id.left_drawer);
 
-        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.DrawerOpen, R.string.DrawerClosed) {
-            public void onDrawerClosed(View view){ Log.d("MainActivity", "onDrawerClosed"); }
-            public void onDrawerOpened(View drawerView) { Log.d("MainActivity", "onDrawerOpened"); }
+        ActionBarDrawerToggle mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.DrawerOpen, R.string.DrawerClosed) {
+            public void onDrawerClosed(View view){
+                Log.d("MainActivity", "onDrawerClosed");
+            }
+            public void onDrawerOpened(View drawerView){
+                Log.d("MainActivity", "onDrawerOpened");
+            }
         };
 
         mDrawerLayout.addDrawerListener(mDrawerToggle);
@@ -64,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "ver perfil", Toast.LENGTH_SHORT).show();
                 } else if (id == R.id.action_favs) {
                     Log.d("MainActivity", "ver libros favoritos");
-                    Toast.makeText(MainActivity.this, "ver libros favoritos", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "libros favoritos", Toast.LENGTH_SHORT).show();
                 } else if (id == R.id.action_cart) {
                     Log.d("MainActivity", "ver carrito");
                     Toast.makeText(MainActivity.this, "ver carrito", Toast.LENGTH_SHORT).show();
@@ -120,7 +122,6 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "cerrar sesión", Toast.LENGTH_SHORT).show();
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 }
