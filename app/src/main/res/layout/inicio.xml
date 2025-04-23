@@ -35,19 +35,54 @@
 
         </androidx.appcompat.widget.Toolbar>
 
-        <ImageView
-            android:id="@+id/imageViewlogo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/cat_img_logo_" />
+        <TextView
+            android:id="@+id/textViewDayBook"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/yellowtail_regular"
+            android:gravity="center"
+            android:layout_marginTop="3dp"
+            android:text="@string/text_bookday"
+            android:textColor="@color/md_theme_onPrimaryContainer"
+            android:textSize="30sp"
+            android:background="@color/md_theme_primaryContainer"/>
 
-        <!-- En esta actividad van a ir todos los libros de la tienda, con una lista personalizada que muestre la protada del libro, su titulo y autor.
-       Pero como no nos han pedido utilizar listas para esta tarea me enfoque en lo que si nos pedian y solo
-       le agregue la imagen del logo por lo mientras :)
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/md_theme_primaryContainer"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_height="97dp"
+                android:layout_weight="1"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="7dp"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="@string/text_bookdesc"
+                android:textColor="@color/md_theme_onPrimaryContainer" />
+
+            <ImageView
+                android:id="@+id/imageViewBooks"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/books" />
+
+        </LinearLayout>
+
+        <!-- En esta actividad tambien quiero agregar todos los libros de la tienda, con una lista personalizada que muestre la portada del libro, su titulo y autor.
+       Pero como no nos han pedido utilizar listas para esta tarea me enfoque en lo que si nos pedian :)
 
        Pienso utilizar la misma estructura que hice en las vistas de la tarea 2:
        constraint -> scroll ->layout
-       Pero le he quitado el scroll porque por el momento porque solo tengo la imagen.-->
+       Pero le he quitado el scroll porque por el momento porque aun no tengo tantos elementos en esta vista.-->
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
