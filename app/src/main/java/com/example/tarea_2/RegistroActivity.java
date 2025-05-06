@@ -10,33 +10,28 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class IniciarSesionActivity extends AppCompatActivity{
+public class RegistroActivity extends AppCompatActivity {
+
     private Button connection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.login);
+        setContentView(R.layout.registro);
 
-        connection = findViewById(R.id.accessbtn);
+        connection = findViewById(R.id.registrobtn);
         connection.setOnClickListener(v -> {
-            Intent intent = new Intent(IniciarSesionActivity.this, MainActivity.class);
+            Intent intent = new Intent(RegistroActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
         });
 
-        connection = findViewById(R.id.regisbtn);
-        connection.setOnClickListener(v -> {
-            Intent intent = new Intent(IniciarSesionActivity.this, RegistroActivity.class);
-            startActivity(intent);
-            finish();
-        });
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.login), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.registro), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
     }
+
 }

@@ -29,12 +29,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
 
-        //setContentView(R.layout.login); //Pantalla 1
-
-        //setContentView(R.layout.registro); //Pantalla 2 (si no se ha registrado)
-
-        //TAREA 3
-        setContentView(R.layout.inicio_navigation_drawer); //Pantalla 2 (si se ha registrado)
+        setContentView(R.layout.inicio_navigation_drawer);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -61,25 +56,25 @@ public class MainActivity extends AppCompatActivity {
 
                 if (id == R.id.profile) {
                     Log.d("MainActivity", "ver perfil");
-                    Toast.makeText(MainActivity.this, "ver perfil", Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(MainActivity.this, "ver perfil", Toast.LENGTH_SHORT).show();
                 } else if (id == R.id.action_favs) {
                     Log.d("MainActivity", "ver libros favoritos");
-                    Toast.makeText(MainActivity.this, "libros favoritos", Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(MainActivity.this, "libros favoritos", Toast.LENGTH_SHORT).show();
                 } else if (id == R.id.action_cart) {
                     Log.d("MainActivity", "ver carrito");
-                    Toast.makeText(MainActivity.this, "ver carrito", Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(MainActivity.this, "ver carrito", Toast.LENGTH_SHORT).show();
                 }  else if (id == R.id.gen_misterio) {
                     Log.d("MainActivity", "libros de misterio");
-                    Toast.makeText(MainActivity.this, "libros de misterio", Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(MainActivity.this, "libros de misterio", Toast.LENGTH_SHORT).show();
                 } else if (id == R.id.gen_historia) {
                     Log.d("MainActivity", "libros de historia");
-                    Toast.makeText(MainActivity.this, "libros de historia", Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(MainActivity.this, "libros de historia", Toast.LENGTH_SHORT).show();
                 } else if (id == R.id.gen_poesia) {
                     Log.d("MainActivity", "libros de poesía");
-                    Toast.makeText(MainActivity.this, "libros de poesía", Toast.LENGTH_SHORT).show();
+                 //   Toast.makeText(MainActivity.this, "libros de poesía", Toast.LENGTH_SHORT).show();
                 } else if (id == R.id.gen_terror) {
                     Log.d("MainActivity", "libros de terror");
-                    Toast.makeText(MainActivity.this, "libros de terror", Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(MainActivity.this, "libros de terror", Toast.LENGTH_SHORT).show();
                 }
                 mDrawerLayout.closeDrawers();
                 return true;
@@ -105,19 +100,19 @@ public class MainActivity extends AppCompatActivity {
 
         if (id == R.id.action_search) {
             Log.d("MainActivity", "buscar libro");
-            Toast.makeText(MainActivity.this, "buscar libro", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(MainActivity.this, "buscar libro", Toast.LENGTH_SHORT).show();
             return true;
         } else if (id == R.id.action_notifs) {
             Log.d("MainActivity", "ver notificaciones");
-            Toast.makeText(MainActivity.this, "ver notificaciones", Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(MainActivity.this, "ver notificaciones", Toast.LENGTH_SHORT).show();
             return true;
         } else if (id == R.id.action_config) {
             Log.d("MainActivity", "configuración");
-            Toast.makeText(MainActivity.this, "configuración", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(MainActivity.this, "configuración", Toast.LENGTH_SHORT).show();
             return true;
         } else if (id == R.id.action_logout) {
             Log.d("MainActivity", "cerrar sesión");
-            Toast.makeText(MainActivity.this, "cerrar sesión", Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(MainActivity.this, "cerrar sesión", Toast.LENGTH_SHORT).show();
             return true;
         }
         return super.onOptionsItemSelected(item);
