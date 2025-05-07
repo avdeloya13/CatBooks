@@ -17,12 +17,21 @@ public class IniciarSesionActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
+
+        boolean logged = getSharedPreferences("sesion", MODE_PRIVATE)
+                .getBoolean("logged", false);
+
+        if (logged) {
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+            return;
+        }
         setContentView(R.layout.login);
 
         connection = findViewById(R.id.accessbtn);
         connection.setOnClickListener(v -> {
-            Intent intent = new Intent(IniciarSesionActivity.this, MainActivity.class);
-            startActivity(intent);
+            getSharedPreferences("user_session", MODE_PRIVATE).edit().putBoolean("logged_in", true).apply();
+            startActivity(new Intent(IniciarSesionActivity.this, MainActivity.class));
             finish();
         });
 

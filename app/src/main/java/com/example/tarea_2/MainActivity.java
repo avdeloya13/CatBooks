@@ -1,5 +1,6 @@
 package com.example.tarea_2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -113,6 +114,14 @@ public class MainActivity extends AppCompatActivity {
         } else if (id == R.id.action_logout) {
             Log.d("MainActivity", "cerrar sesión");
           //  Toast.makeText(MainActivity.this, "cerrar sesión", Toast.LENGTH_SHORT).show();
+            getSharedPreferences("sesion", MODE_PRIVATE)
+                    .edit()
+                    .putBoolean("logged", false)
+                    .apply();
+
+            Intent intent = new Intent(MainActivity.this, IniciarSesionActivity.class);
+            startActivity(intent);
+            finish();
             return true;
         }
         return super.onOptionsItemSelected(item);

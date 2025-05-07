@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/md_theme_onPrimary"
@@ -77,12 +78,13 @@
 
         </LinearLayout>
 
-        <!-- En esta actividad tambien quiero agregar todos los libros de la tienda, con una lista personalizada que muestre la portada del libro, su titulo y autor.
-       Pero como no nos han pedido utilizar listas para esta tarea me enfoque en lo que si nos pedian :)
-
-       Pienso utilizar la misma estructura que hice en las vistas de la tarea 2:
-       constraint -> scroll ->layout
-       Pero le he quitado el scroll porque por el momento porque aun no tengo tantos elementos en esta vista.-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_all_gnros"
+            android:layout_width="409dp"
+            android:layout_height="473dp"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="257dp" />
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
