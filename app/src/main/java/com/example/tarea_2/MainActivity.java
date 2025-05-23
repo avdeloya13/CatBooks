@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.widget.Toolbar;
@@ -18,12 +17,19 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
+
+    RecyclerView recyclerViewLibros;
+    AdapterPersonalizado adaptador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +93,29 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        recyclerViewLibros = findViewById(R.id.list_all_gnros);
+        recyclerViewLibros.setLayoutManager(new LinearLayoutManager(this));
+        adaptador = new AdapterPersonalizado(libros(), this);
+        recyclerViewLibros.setAdapter(adaptador);
+    }
+
+    private ArrayList<Book> libros() {
+        ArrayList<Book> lista = new ArrayList<>();
+        lista.add(new Book(R.drawable.misterio_1, "Y no quedó ninguno", "Agatha Christie"));
+        lista.add(new Book(R.drawable.misterio_2, "Un cadáver en la biblioteca", "Agatha Christie"));
+        lista.add(new Book(R.drawable.misterio_3, "Extraordinario", "Stephen Chbosky"));
+        lista.add(new Book(R.drawable.misterio_4, "La chica del tren", "Paula Hawkins"));
+        lista.add(new Book(R.drawable.poesia_1, "Violet bent backwards over the grass", "Lana Del Rey"));
+        lista.add(new Book(R.drawable.poesia_2, "Azul", "Rubén Darío"));
+        lista.add(new Book(R.drawable.poesia_3, "Donde viven las musas", "Marianela Dos Santos"));
+        lista.add(new Book(R.drawable.poesia_4, "Poesía completa", "Alejandra Pizarnik"));
+        lista.add(new Book(R.drawable.terror_1, "Cadáver exquisito", "Agustina Bazterrica"));
+        lista.add(new Book(R.drawable.terror_2, "Cómo vender una casa embrujada", "Grady Hendrix"));
+        lista.add(new Book(R.drawable.terror_3, "La casa infernal", "Richard Matheson"));
+        lista.add(new Book(R.drawable.historia_1, "Circe", "Madeline Miller"));
+
+        return lista;
     }
 
     @Override
